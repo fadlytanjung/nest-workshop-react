@@ -22,7 +22,7 @@ const Todo = ({ title, id, status, bgColor, textColor }) => {
       {open ? <Textarea onChange={handleChange} value={title} /> : <p> {title}</p>}
       <div className='flex justify-between mt-3 items-center'>
         <div className={classNames(
-          'flex w-5 h-5 rounded-sm items-center justify-center text-white',
+          'flex w-[28px] h-[28px] rounded-sm items-center justify-center text-white',
           open ? 'bg-information-50' : 'bg-warning-100'
           )}>
           {open ? <FloppyDisk className="cursor-pointer" onClick={() => setOpen(false)} size={14} /> :
@@ -31,7 +31,7 @@ const Todo = ({ title, id, status, bgColor, textColor }) => {
         <Menu onChange={()=> setOpenMenu(!openMenu)} opened={openMenu} position="bottom-start" >
           <Menu.Target>
             <button className={classNames(`flex font-[600] px-2 py-1 rounded-sm justify-betwee items-center`, bgColor)}>
-              <p className={classNames(`font-semibold`,textColor)}>{status}</p>
+              <p className={classNames(`font-semibold text-sm`,textColor)}>{status}</p>
               <span className='font-bold ml-2'><CaretDown size={16} /></span>
             </button>
           </Menu.Target>
