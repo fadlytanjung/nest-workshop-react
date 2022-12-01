@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { MantineProvider } from '@mantine/core';
+import MainLayout from './components/MainLayout';
+import TodoLayout from './components/TodoLayout';
+import AppContextProvider from './context';
+import './index.css';
+import "@fontsource/nunito-sans";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MantineProvider withGlobalStyles withNormalizeCSS
+      theme={{
+        fontFamily: 'Nunito Sans, sans-serif',
+      }}
+    >
+      <AppContextProvider>
+        <MainLayout>
+          <TodoLayout />
+        </MainLayout>
+      </AppContextProvider>
+    </MantineProvider>
   );
 }
-
-export default App;
