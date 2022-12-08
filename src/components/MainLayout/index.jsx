@@ -1,7 +1,8 @@
+import React from 'react';
 import { Text, Title } from '@mantine/core';
 import { Plus } from 'phosphor-react';
-import React from 'react';
 import { useTodoContext } from '../../context';
+import styles from './styles.module.css';
 
 const MainLayout = ({ children }) => {
   const { addTodo } = useTodoContext();
@@ -13,6 +14,7 @@ const MainLayout = ({ children }) => {
         <Plus onClick={addTodo} size={20} />
       </div>
       {children}
+      <p className={styles.footerText}>version 1.0.0</p>
     </div>
   );
 };
